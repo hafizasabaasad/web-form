@@ -2,7 +2,7 @@
   <div class="bg-img">
     <h1>Account Registeration Form</h1>
     <h3>Create an ABC Account</h3>
-    <form class="container">
+    <form @submit.prevent="Submit" class="container">
       <fieldset>
         <label for="first-name"
           >Enter Your First Name:
