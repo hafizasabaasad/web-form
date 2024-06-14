@@ -1,110 +1,149 @@
 <template>
-    <h1>Registration Form</h1>
-    <p>Please fill out this form with the required information</p>
-   <form> </form>
-    <fieldset>
-         <label for="first-name">Enter Your First Name: 
-            <input id="first-name"  type="text" required v-model="firstname">
-        </label>
-        <label for="last-name">Enter Your Last Name:
-            <input id="last-name" type="text" required v-model="lastname">
-        </label>
-        <label for="email">Enter Your Email: 
-            <input id="email" type="email" required v-model="email">
-        </label>
-        <label for="new-password">Create a New Password: 
-            <input id="new-password" type="password"  pattern="[a-z0-5]{8,}" required v-model="password">
-        </label>
-    </fieldset>
-    <fieldset>
-        <legend>Account type (required)</legend>
-        <label for="personal-account"><input class="inline" id="personal-account" type="radio" name="account-type" checked /> Personal</label>
-        <label for="business-account"><input  class="inline" id="business-account" type="radio" name="account-type" /> Business</label>
-      </fieldset>
+  <div class="bg-img">
+    <h1>Account Registeration Form</h1>
+    <h3>Create an ABC Account</h3>
+    <form class="container">
       <fieldset>
-        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" /></label>
-        <label for="age">Input your age (years): <input id="age" type="number" min="13" max="120" /></label>
-        <label for="referrer">How did you hear about us?
-          <select id="referrer">
-            <option value="">(select one)</option>
-            <option value="1">freeCodeCamp News</option>
-            <option value="2">freeCodeCamp YouTube Channel</option>
-            <option value="3">freeCodeCamp Forum</option>
-            <option value="4">Other</option>
-          </select>
+        <label for="first-name"
+          >Enter Your First Name:
+          <input id="first-name" type="text" required v-model="firstname" />
         </label>
-        <label for="bio">Provide a bio:
-          <textarea id="bio" rows="3" cols="30" placeholder="I like coding on the beach...."></textarea>
+        <label for="last-name"
+          >Enter Your Last Name:
+          <input id="last-name" type="text" required v-model="lastname" />
+        </label>
+        <label for="email"
+          >Enter Your Email:
+          <input id="email" type="email" required v-model="email" />
+        </label>
+        <label for="new-password"
+          >Create a New Password:
+          <input
+            id="new-password"
+            type="password"
+            pattern="[a-z0-5]{8,}"
+            required
+            v-model="password"
+          />
         </label>
       </fieldset>
-    <label for="terms-and-conditions">
-        <input class="inline" id="terms-and-conditions" type="checkbox" required> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions </a>
-    </label>
-    <input  type="submit" value="Submit">
-      
-  
-   <P>Email:{{ email }}</P>
-   <p>Password:{{ password }}</p>
-   <p> FirstName:{{ firstname }}</p>
-   <p> LastName:{{  lastname }}</p>
+      <br />
+      <fieldset>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"
+          ><input
+            class="inline"
+            id="personal-account"
+            type="radio"
+            name="account-type"
+            checked
+          />
+          Personal</label
+        >
+        <label for="business-account"
+          ><input
+            class="inline"
+            id="business-account"
+            type="radio"
+            name="account-type"
+          />
+          Business</label
+        >
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!-- <P>Email:{{ email }}</P>
+  <p>Password:{{ password }}</p>
+  <p>FirstName:{{ firstname }}</p>
+  <p>LastName:{{ lastname }}</p> -->
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-        email: '',
-        password: '',
-        firstname: '',
-        lastname: '',
-
-    }
-  }
-}
+  data() {
+    return {
+      email: "",
+      password: "",
+      firstname: "",
+      lastname: "",
+    };
+  },
+};
 </script>
 
 <style>
+.bg-img {
+  /* The image used */
+  background-image: url("../../public/background-image.jpeg");
 
+  /* Control the height of the image */
+  /* min-height: px; */
 
-h1, p {
-  margin: 1em auto;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add styles to the form container */
+.container {
+  position: center;
+  /* margin-left: 100px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto; */
+  /* margin: 30px; */
+  max-width: 400px;
+  max-height: 850px;
+  padding: 0px;
+  background-color: white;
+}
+h1 {
+  /* margin: 1em auto; */
+  margin: 60px;
+  padding: 4px;
   text-align: center;
+}
+h3 {
+  margin: 20px;
+  padding: 20px;
 }
 
 form {
-  width: 60vw;
-  max-width: 500px;
-  min-width: 300px;
-  margin: 0 auto;
-  padding-bottom: 2em;
-  
+  border: 1px solid;
+  border-color: black;
+  /* width: 100vw;
+  max-width: 700px;
+  min-width: 300px; */
+  margin: auto;
+  padding-bottom: 1em;
 }
 
 fieldset {
   border: none;
-  padding: 2rem 0;
-  border-bottom: 3px solid #757578;
+  padding: 1rem 3rem;
 }
 
-fieldset:last-of-type {
+/* fieldset:last-of-type {
   border-bottom: none;
-}
+} */
 label {
   display: block;
-  margin: 0.5rem 0;
-}
-input , textarea{
-    background-color:#0a0a23 ;
-    border: 1px solid #0a0a23;
-
+  margin: 1rem 0;
 }
 input,
-textarea,
-select {
+textarea {
+  background-color: white;
+  border: 1px solid #0a0a23;
   margin: 10px 0 0 0;
   width: 100%;
-  color:#ffffff ;
-    min-height: 2em;
+  color: black;
+  min-height: 2em;
 }
 
 .inline {
@@ -112,18 +151,31 @@ select {
   margin: 0 0.5em 0 0;
   vertical-align: middle;
 }
-input[type="submit"]{
-    display: block;
-    width: 60%;
-    min-width: 300px;
-    margin: 1em auto 1em auto;
-    height: 2em;
-    font-size: 1.1rem;
-    background-color:#3b3b4f;
-    border-color: white;
-    
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  min-width: 300px;
+  margin: 2em auto 3em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: rgb(12, 107, 223);
+  border-color: white;
 }
-input[type="file"]{
-   padding:1px 2px ;
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  margin: auto;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 </style>

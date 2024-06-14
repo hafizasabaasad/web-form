@@ -6,9 +6,9 @@
 import Signupform from "./components/Signupform.vue";
 
 export default {
-  name: 'App',
-  components: { Signupform }
-}
+  name: "App",
+  components: { Signupform },
+};
 </script>
 
 <style>
@@ -17,11 +17,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #120ef4;
-  margin-top: 60px;
+  color: #010104;
+  margin-top: auto;
 }
-body{
-  margin: 0;
-  background: #eee;
+body,
+html {
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body {
+  margin: auto;
+  margin-bottom: 0px;
+  background: white;
 }
 </style>
