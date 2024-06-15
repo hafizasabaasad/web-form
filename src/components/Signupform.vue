@@ -1,7 +1,9 @@
 <template>
+  
   <div class="bg-img">
-    <h1>Account Registeration Form</h1>
-    <h3>Create an ABC Account</h3>
+  <h1>Account Registeration Form</h1>
+  <!-- </div> -->
+    <h2>Create an ABC Account</h2>
     <form @submit.prevent="Submit" class="container">
       <fieldset>
         <label for="first-name"
@@ -76,52 +78,48 @@ export default {
 <style>
 .bg-img {
   /* The image used */
-  background-image: url("../../public/background-image.jpeg");
-
-  /* Control the height of the image */
-  /* min-height: px; */
-
-  /* Center and scale the image nicely */
+  background-image: url("../../public/background-image-2.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  
 }
 
 /* Add styles to the form container */
 .container {
   position: center;
-  /* margin-left: 100px;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-top: auto; */
-  /* margin: 30px; */
-  max-width: 400px;
-  max-height: 850px;
+  max-width: 450px;
+  min-height: 300px;
+  max-height: 600px;
   padding: 0px;
   background-color: white;
 }
 h1 {
   /* margin: 1em auto; */
-  margin: 60px;
-  padding: 4px;
-  text-align: center;
-}
-h3 {
   margin: 20px;
   padding: 20px;
+  color: white;
+  text-align: center;
+}
+h2 {
+  margin: 10px;
+  padding: 20px;
+  color: white;
 }
 
 form {
   border: 1px solid;
-  border-color: black;
+  border-radius: 20px;
+  border-color: white;
   /* width: 100vw;
   max-width: 700px;
   min-width: 300px; */
   margin: auto;
   padding-bottom: 1em;
+  
 }
 
 fieldset {
@@ -134,7 +132,7 @@ fieldset {
 } */
 label {
   display: block;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
 }
 input,
 textarea {
@@ -148,17 +146,18 @@ textarea {
 
 .inline {
   width: unset;
-  margin: 0 0.5em 0 0;
+  margin: 0 0em 0 0;
   vertical-align: middle;
 }
 input[type="submit"] {
   display: block;
-  width: 60%;
-  min-width: 300px;
+  width: 40%;
+  min-width: 20px;
   margin: 2em auto 3em auto;
   height: 2em;
   font-size: 1.1rem;
   background-color: rgb(12, 107, 223);
+  color: white;
   border-color: white;
 }
 
@@ -166,6 +165,7 @@ input[type="submit"] {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
+  border-radius:10px;
   width: 100%;
   padding: 5px;
   margin: auto;
@@ -175,7 +175,8 @@ input[type="email"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  background-color: #ddd;
+  background-color: white;
   outline: none;
 }
+
 </style>
