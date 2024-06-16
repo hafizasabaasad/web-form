@@ -3,7 +3,11 @@
 </template>
 
 <script>
-import Signupform from "./components/Signupform.vue";
+
+// with background image
+import Signupform from "./components/Signupform-background.vue";
+// with 2 columns display
+// import Signupform from "./components/Signupform-side-by-side.vue";
 
 export default {
   name: "App",
@@ -20,16 +24,16 @@ export default {
   color: #010104;
   margin-top: auto;
 }
-body,
+body {
+display: grid;
+min-height: 0;
+grid-template-rows: 1fr;
+grid-template-columns: 1fr; /* 1 columns */
+
+}
 html {
-  height: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
+display: grid;
+height: 100%; /* OR min-height: 100% */
 }
 
-body {
-  margin: auto;
-  margin-bottom: 0px;
-  background: white;
-}
 </style>
