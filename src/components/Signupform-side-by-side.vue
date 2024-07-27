@@ -1,10 +1,10 @@
 <template>
-  <div class="grid-container">
+ <div class="grid-container">
       <div class="bg-img item-1">
       </div> 
   <div class="item-2">
     <h1 class="header h1">Account Registeration Form</h1>
-    <form @submit.prevent="Submit" class="main">
+    <form @submit.prevent="handleSubmit" class="main">
         <h2>Create an ABC Account</h2>
         <fieldset>
             <label for="first-name">Enter Your First Name:
@@ -17,8 +17,9 @@
                 <input id="email" type="email" required v-model="email" />
             </label>
             <label for="new-password">Create a New Password:
-                <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required v-model="password" />
+                <input id="new-password" type="password"  required v-model="password" />
             </label>
+            <div v-if="passwordError" class="error">{{ passwordError  }}</div>
         </fieldset>
         <br />
         <fieldset>
@@ -34,12 +35,7 @@
     </form>
   </div>
   </div>
-
-
-  <!-- <P>Email:{{ email }}</P>
-  <p>Password:{{ password }}</p>
-  <p>FirstName:{{ firstname }}</p>
-  <p>LastName:{{ lastname }}</p> -->
+  
 </template>
 
 <script>
@@ -50,8 +46,17 @@ export default {
       password: "",
       firstname: "",
       lastname: "",
-    };
+      passwordError:""
+    }
   },
+  methods:{
+    handleSubmit(){
+      // validate password
+   this.passwordError = this.password.lenght > 5 ?
+   '' : 'password must be at least 6 chars long'
+  }
+  }
+   
 };
 </script>
 
@@ -179,6 +184,12 @@ input[type="text"]:focus,
 input[type="password"]:focus {
   background-color: white;
   outline: none;
+}
+error{
+  color: #ff0062;
+  margin-top: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 
 </style>

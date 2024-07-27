@@ -5,9 +5,9 @@
 <script>
 
 // with background image
-import Signupform from "./components/Signupform-background.vue";
+// import Signupform from "./components/Signupform-background.vue";
 // with 2 columns display
-// import Signupform from "./components/Signupform-side-by-side.vue";
+import Signupform from "./components/Signupform-side-by-side.vue";
 
 export default {
   name: "App",
