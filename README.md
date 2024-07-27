@@ -22,6 +22,12 @@ npm run serve
 npm run build
 ```
 
+### Signup views
+
+There are two view availables.
+
+Update Line 8 or 10 in 'src/App.vue'
+
 ### Live Application view
 
 Live application [view](https://hafizasabaasad.github.io/web-form/)
